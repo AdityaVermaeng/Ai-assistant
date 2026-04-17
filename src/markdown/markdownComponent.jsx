@@ -21,4 +21,24 @@ blockqoute:({children})=>(
 	</blockquote>
 ),
 
+//Horizontal rules
+hr:()=><hr className="border-zinc-700 my-4"/>,
+// Table headers with dark background
+th:asTag('th','border border-zinc-700 bg-zinc-800 px-4 py-2 text-left font-semibold'),
+//Table data cells
+td:asTag('td','border border-zinc-700 px-4 py-2'),
+// Heading styles (h1-h4)
+h1:asTag('h1','text-2xl font-bold text-white mb-3'),
+h2:asTag('h2','text-xl font-semibold text-white mb-2'),
+h3:asTag('h3','text-lg font-semibold text-white mb-2'),
+h4:asTag('h4','text-base font-semibold text-white mb-2'),
+//Paragraphs
+p:asTag('p','mb-3 text-zinc-200'),
+//Lists(unordered and ordered)
+ul:asTag('ul','list-disc list-inside space-y-1 mb-3'),
+ol:asTag('0l','list-decimal list-inside space-y-1 mb-3'),
+//Lists items
+li:asTag('li','text-zinc-200'),
+
 }
+export default markdownComponents;
