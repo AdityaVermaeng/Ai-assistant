@@ -35,7 +35,7 @@ import QuickActions from "./components/QuickActions"
 
   //Prepare API headers with authorization and referrer information
   const apiHeaders= useMemo(()=>{
-    const key = import.meta.env.OPENROUTER_API_KEY
+    const key = import.meta.env.VITE_OPENROUTER_API_KEY
     const referer= typeof window !=='undefined' ? window.location.origin : ''
     return {
       ...fallbackHeaders,
