@@ -4,7 +4,7 @@ export const API_URL ='https://openrouter.ai/api/v1/chat/completions'
 
 //Default headers sent with every API request
 
-export const fallbackHeader ={
+export const fallbackHeaders ={
 	'Content-Type':'appliction/json',
 	'X-Title':'AI-ASSISTANT OpenRouter Model',// Application identifier for OpenRouter
 }
