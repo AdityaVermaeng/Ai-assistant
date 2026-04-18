@@ -18,7 +18,7 @@ export const MODELS = [
 ]
 
 //Set of model IDs support vision/image analysis capabilities
-export const VISON_MODEL_IDS=new Set(['amazon/nova-2-lite-v1:free','nvidia/nemotron-nano-12b-v2-vl:free'])
+export const VISION_MODEL_IDS=new Set(['amazon/nova-2-lite-v1:free','nvidia/nemotron-nano-12b-v2-vl:free'])
 
 //Model ID for nova that support file Attachments
 export const NOVA_FILE_MODEL_ID= 'amazon/nova-2-lite-v1:free'
