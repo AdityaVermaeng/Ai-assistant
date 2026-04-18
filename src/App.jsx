@@ -19,11 +19,11 @@ import QuickActions from "./components/QuickActions"
   //User input and AI answer
   const[prompt, setPrompt]=useState('')
   const[answer, setAnswer]=useState('')
-  const[displayedAnswer,setDisplayedAnswer]=useState('')
+  const[displayedAnswer, setDisplayedAnswer]=useState('')
 
   // Files and Image attachments
   const[imageData, setImageData]=useState(null)
-  const[fileAttachment, setFileAttchment]=useState(null)
+  const[fileAttachment, setFileAttachment]=useState(null)
 
   //DOM reference fro file input
   const imageInputRef=useRef(null)
@@ -55,7 +55,7 @@ import QuickActions from "./components/QuickActions"
     if(imageInputRef.current) imageInputRef.current.value =''
   }
   const clearFile =()=> {
-    setFileAttchment(null)
+    setFileAttachment(null)
     if(fileInputRef.current) fileInputRef.current.value =''
   }
   const resetAttachments =()=> {
@@ -73,9 +73,9 @@ import QuickActions from "./components/QuickActions"
   const handleImageChange =(event)=>{
     const file = event.target.files?.[0]
     if(!file) return
-    const render = new FileRender()
-    render.onloadend =()=> setImageData(render.result)
-    render.readAsDataURL(file)
+    const reader = new FileReader()
+    reader.onloadend =()=> setImageData(reader.result)
+    reader.readAsDataURL(file)
   }
 
     // Process text file attachment with size and length
@@ -96,7 +96,7 @@ import QuickActions from "./components/QuickActions"
       const truncated = content.slice(0, MAX_FILE_CHARS)
       const notice = content.length > MAX_FILE_CHARS ? '\n\n[Content truncated to avoid exceeding model limits.]' : ''
 
-      setFileAttchment({
+      setFileAttachment({
         name:file.name,
         content:`${truncated}${notice}`
       })
@@ -176,7 +176,7 @@ import QuickActions from "./components/QuickActions"
           headers:apiHeaders,
           body: JSON.stringify({
             model:selectModel.id,
-            message:[
+            messages:[
               {
                 role:'user',
               content: messageContent,
